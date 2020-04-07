@@ -9,7 +9,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "google-spreadsheet": "^3.0.10"
+    "google-spreadsheet": "^3.0.10",
+    "morgan": "^1.10.0"
   }
 }
