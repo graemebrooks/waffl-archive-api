@@ -1,8 +1,6 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { promisify } = require('util');
 
-const creds = require('../../client_secret.json');
-
 async function getAllTimeWinsAndLosses() {
 	const doc = new GoogleSpreadsheet('10hTrKAubzc-uZ_RtKGVvU3cg9hhN2cDYll5p1ltfwmk');
 	await doc.useServiceAccountAuth({
