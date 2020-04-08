@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-const allTimeStatsCtrl = require('../controllers/allTimeStats');
+const statsheetCtrl = require('../controllers/statsheet');
 
-router.get('/index/winsAndLosses', allTimeStatsCtrl.winsAndLosses);
+router.get('/index/statsheet', statsheetCtrl.index);
 
 module.exports = router;
