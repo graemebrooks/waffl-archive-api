@@ -5,7 +5,7 @@ async function getAllTimeWinsAndLosses() {
 	const doc = new GoogleSpreadsheet('10hTrKAubzc-uZ_RtKGVvU3cg9hhN2cDYll5p1ltfwmk');
 	await doc.useServiceAccountAuth({
 		client_email: process.env.CLIENT_EMAIL,
-		private_key: process.env.PRIVATE_KEY
+		private_key: process.env.PRIVATE_KEY.replace(/\\n/gm, '\n')
 	});
 	await doc.loadInfo();
 
