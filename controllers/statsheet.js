@@ -7,7 +7,7 @@ module.exports = {
 async function index(req, res) {
 	result = await getStatsheet();
 	try {
-		res.status(200).json(result);
+		res.setHeader('Access-Control-Allow-Origin', '*').status(200).json(result);
 	} catch (err) {
 		res.status(400).json(err);
 	}
