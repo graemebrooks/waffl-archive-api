@@ -14,15 +14,16 @@ async function getStatsheet() {
 	await sheet.loadCells('A1:AG13');
 
 	// Load Teams
-	const teams = {};
-	for (let i = 1; i < 12; i++) {
-		teams[i] = sheet.getCell(i, 1).value;
-	}
+	// const teams = {};
+	// for (let i = 1; i < 12; i++) {
+	// 	teams[i] = sheet.getCell(i, 1).value;
+	// }
 
 	// Generate Wins and Losses Data
-	const data = {};
+	const data = { teams: [] };
 	for (let i = 1; i < 12; i++) {
-		data[teams[i]] = {
+		data.teams.push({
+			teamName: sheet.getCell(i, 1).value,
 			allTimeWins: sheet.getCell(i, 2).value,
 			allTimeLosses: sheet.getCell(i, 3).value,
 			allTimePointsScored: sheet.getCell(i, 7).value,
@@ -52,7 +53,7 @@ async function getStatsheet() {
 				winning: sheet.getCell(i, 30).value,
 				losing: sheet.getCell(i, 31).value
 			}
-		};
+		});
 	}
 
 	return data;
