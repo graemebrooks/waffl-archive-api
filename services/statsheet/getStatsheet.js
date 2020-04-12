@@ -50,6 +50,19 @@ async function getStatsheet() {
 		});
 	}
 
+	// Adds logo links
+	data.teams[0].logoUrl = 'https://i.imgur.com/4PAjdJR.png';
+	data.teams[1].logoUrl = 'https://i.imgur.com/Je5Chs0.png';
+	data.teams[2].logoUrl = 'https://i.imgur.com/aTs50El.png';
+	data.teams[3].logoUrl = 'https://i.imgur.com/bDpjNeF.png';
+	data.teams[4].logoUrl = 'https://i.imgur.com/a9jFlAW.png';
+	data.teams[5].logoUrl = 'https://i.imgur.com/lIRYULG.png';
+	data.teams[6].logoUrl = 'https://i.imgur.com/q4j1M2D.png';
+	data.teams[7].logoUrl = 'https://i.imgur.com/TpSQJZN.png';
+	data.teams[8].logoUrl = 'https://i.imgur.com/qVAzfoj.png';
+	data.teams[9].logoUrl = 'https://i.imgur.com/lLmmaih.png';
+	data.teams[10].logoUrl = 'https://libraries.psu.edu/sites/default/files/default_images/librarian_0_0.gif';
+
 	return data;
 }
 
