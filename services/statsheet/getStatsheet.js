@@ -13,13 +13,7 @@ async function getStatsheet() {
 
 	await sheet.loadCells('A1:AG13');
 
-	// Load Teams
-	// const teams = {};
-	// for (let i = 1; i < 12; i++) {
-	// 	teams[i] = sheet.getCell(i, 1).value;
-	// }
-
-	// Generate Wins and Losses Data
+	// Populate data from statsheet google doc
 	const data = { teams: [] };
 	for (let i = 1; i < 12; i++) {
 		data.teams.push({
