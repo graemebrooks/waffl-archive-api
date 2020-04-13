@@ -14,7 +14,6 @@ async function getPlayerRecords() {
 	await sheet.loadCells('A1:AW60');
 
 	// Generate Recordbook data
-	// highestScore: sheet.getCell(1, 1).value
 	const data = {
 		highestPlayerScores: [],
 		highestQbScores: [],
@@ -23,14 +22,15 @@ async function getPlayerRecords() {
 		highestTEScores: [],
 		highestQbScores: [],
 
-		bestQbYears: [],
-		bestRbYears: [],
-		bestWrYears: [],
-		bestTeYears: [],
-		bestDefYears: []
+		bestQbSeasons: [],
+		bestRbSeasons: [],
+		bestWrSeasons: [],
+		bestTeSeasons: [],
+		bestDefSeasons: []
 	};
 
 	for (let i = 1; i < 11; i++) {
+		// Best Weekly Performances
 		data.highestPlayerScores.push({
 			score: sheet.getCell(i, 1).value,
 			playerTeamDate: sheet.getCell(i, 2).value
@@ -50,6 +50,28 @@ async function getPlayerRecords() {
 		data.highestTEScores.push({
 			score: sheet.getCell(i, 9).value,
 			playerTeamDate: sheet.getCell(i, 10).value
+		});
+
+		//Best Seasonal Performances
+		data.bestQbSeasons.push({
+			score: sheet.getCell(i, 11).value,
+			playerTeamDate: sheet.getCell(i, 13).value
+		});
+		data.bestRbSeasons.push({
+			score: sheet.getCell(i, 14).value,
+			playerTeamDate: sheet.getCell(i, 16).value
+		});
+		data.bestWrSeasons.push({
+			score: sheet.getCell(i, 17).value,
+			playerTeamDate: sheet.getCell(i, 19).value
+		});
+		data.bestTeSeasons.push({
+			score: sheet.getCell(i, 20).value,
+			playerTeamDate: sheet.getCell(i, 22).value
+		});
+		data.bestDefSeasons.push({
+			score: sheet.getCell(i, 26).value,
+			playerTeamDate: sheet.getCell(i, 28).value
 		});
 	}
 

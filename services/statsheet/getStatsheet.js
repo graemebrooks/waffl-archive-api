@@ -63,6 +63,52 @@ async function getStatsheet() {
 	data.teams[9].logoUrl = 'https://i.imgur.com/lLmmaih.png';
 	data.teams[10].logoUrl = 'https://libraries.psu.edu/sites/default/files/default_images/librarian_0_0.gif';
 
+	// Adds team colors
+	data.teams[0].colors = {
+		primary: '#5c2289',
+		secondary: '#ffce00'
+	};
+	data.teams[1].colors = {
+		primary: '#00f1ee',
+		secondary: '#db00c9'
+	};
+	data.teams[2].colors = {
+		primary: '#00005b',
+		secondary: '#ffce00'
+	};
+	data.teams[3].colors = {
+		primary: '#1e6b0e',
+		secondary: '#ff6d00'
+	};
+	data.teams[4].colors = {
+		primary: '#dd1919',
+		secondary: '#ffb600'
+	};
+	data.teams[5].colors = {
+		primary: '#ee8a10',
+		secondary: '#dd366d'
+	};
+	data.teams[6].colors = {
+		primary: '#000b6d',
+		secondary: '#ffe600'
+	};
+	data.teams[7].colors = {
+		primary: '#206632',
+		secondary: '#e53841'
+	};
+	data.teams[8].colors = {
+		primary: '#00205b',
+		secondary: '#fa6300'
+	};
+	data.teams[9].colors = {
+		primary: '#41b1f0',
+		secondary: '#a7a7a7'
+	};
+	data.teams[10].colors = {
+		primary: '#007efe',
+		secondary: '#ffffff'
+	};
+
 	return data;
 }
 
