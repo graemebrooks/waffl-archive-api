@@ -61,7 +61,7 @@ async function getStatsheet() {
 	data.teams[7].logoUrl = 'https://i.imgur.com/TpSQJZN.png';
 	data.teams[8].logoUrl = 'https://i.imgur.com/qVAzfoj.png';
 	data.teams[9].logoUrl = 'https://i.imgur.com/lLmmaih.png';
-	data.teams[10].logoUrl = 'https://libraries.psu.edu/sites/default/files/default_images/librarian_0_0.gif';
+	data.teams[10].logoUrl = 'https://i.imgur.com/znuRXVw.png';
 
 	// Adds team colors
 	data.teams[0].colors = {
