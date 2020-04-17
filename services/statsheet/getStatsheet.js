@@ -51,7 +51,7 @@ async function getStatsheet() {
 	}
 
 	// Adds logo links
-	data.teams[0].logoUrl = 'https://i.imgur.com/4PAjdJR.png';
+	data.teams[0].logoUrl = 'https://i.imgur.com/Rq6FUqE.png';
 	data.teams[1].logoUrl = 'https://i.imgur.com/Je5Chs0.png';
 	data.teams[2].logoUrl = 'https://i.imgur.com/aTs50El.png';
 	data.teams[3].logoUrl = 'https://i.imgur.com/bDpjNeF.png';
@@ -65,8 +65,8 @@ async function getStatsheet() {
 
 	// Adds team colors
 	data.teams[0].colors = {
-		primary: '#5c2289',
-		secondary: '#ffce00'
+		primary: '#7437bf',
+		secondary: '#ffffff'
 	};
 	data.teams[1].colors = {
 		primary: '#00f1ee',
