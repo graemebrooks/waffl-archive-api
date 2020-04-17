@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var fs = require('fs');
+var https = require('https');
 
 var indexRouter = require('./routes/index');
 
@@ -40,8 +42,23 @@ app.use(function(err, req, res, next) {
 
 const port = process.env.PORT || 3000;
 
-app.listen(port, function() {
-	console.log(`Express app running on port ${port}`);
-});
+// app.listen(port, function() {
+// 	console.log(`Express app running on port ${port}`);
+// });
+
+// key: process.env.SERVER_KEY,
+// 			cert: process.env.SERVER_CERT
+
+https
+	.createServer(
+		{
+			key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
+			cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
+		},
+		app
+	)
+	.listen(port, function() {
+		console.log('WAFFL Archive listening on port 3000! Go to https://localhost:3000/');
+	});
 
 module.exports = app;
