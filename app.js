@@ -49,16 +49,28 @@ const port = process.env.PORT || 3000;
 // key: process.env.SERVER_KEY,
 // 			cert: process.env.SERVER_CERT
 
-https
-	.createServer(
-		{
-			key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
-			cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
-		},
-		app
-	)
-	.listen(port, function() {
-		console.log(`WAFFL Archive listening on port ${port}!`);
-	});
+const httpsServer = https.createServer(
+	{
+		key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
+		cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
+	},
+	app
+);
+
+httpsServer.listen(port, function() {
+	console.log(`WAFFL Archive listening on port ${port}!`);
+});
+
+// https
+// 	.createServer(
+// 		{
+// 			key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
+// 			cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
+// 		},
+// 		app
+// 	)
+// 	.listen(port, function() {
+// 		console.log(`WAFFL Archive listening on port ${port}!`);
+// 	});
 
 module.exports = app;
