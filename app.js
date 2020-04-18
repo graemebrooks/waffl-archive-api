@@ -58,7 +58,7 @@ https
 		app
 	)
 	.listen(port, function() {
-		console.log('WAFFL Archive listening on port 3000! Go to https://localhost:3000/');
+		console.log(`WAFFL Archive listening on port ${port}!`);
 	});
 
 module.exports = app;

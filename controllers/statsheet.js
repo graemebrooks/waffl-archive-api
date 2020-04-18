@@ -6,6 +6,7 @@ module.exports = {
 
 async function index(req, res) {
 	result = await getStatsheet();
+	console.log(result);
 	try {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.status(200).json(result);
