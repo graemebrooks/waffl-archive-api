@@ -40,37 +40,10 @@ app.use(function(err, req, res, next) {
 	res.render('error');
 });
 
-const port = process.env.PORT || 80;
+const port = process.env.PORT || 8080;
 
-// app.listen(port, function() {
-// 	console.log(`Express app running on port ${port}`);
-// });
-
-// key: process.env.SERVER_KEY,
-// 			cert: process.env.SERVER_CERT
-
-const httpsServer = https.createServer(
-	{
-		key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
-		cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
-	},
-	app
-);
-
-httpsServer.listen(port, function() {
-	console.log(`WAFFL Archive listening on port ${port}!`);
+app.listen(port, function() {
+ 	console.log(`WAFFL ARCHIVE running on port ${port}`);
 });
-
-// https
-// 	.createServer(
-// 		{
-// 			key: process.env.SERVER_KEY.replace(/\\n/gm, '\n'),
-// 			cert: process.env.SERVER_CERT.replace(/\\n/gm, '\n')
-// 		},
-// 		app
-// 	)
-// 	.listen(port, function() {
-// 		console.log(`WAFFL Archive listening on port ${port}!`);
-// 	});
 
 module.exports = app;
