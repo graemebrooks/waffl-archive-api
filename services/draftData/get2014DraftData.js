@@ -1,6 +1,9 @@
 const { GoogleSpreadsheet } = require('google-spreadsheet');
 const { promisify } = require('util');
 
+const { logoUrls } = require('../teamMisc/teamData');
+const { teamColors } = require('../teamMisc/teamData');
+
 async function get2014DraftData() {
 	const doc = new GoogleSpreadsheet('1UyEK38Llr17ph_qrnuN2CUaKZitpXoKoR59uJqVqgIc');
 	await doc.useServiceAccountAuth({
