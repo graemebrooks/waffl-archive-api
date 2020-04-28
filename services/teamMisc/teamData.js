@@ -1,5 +1,5 @@
 const logoUrls = {
-	iceBabies: 'https://i.imgur.com/4PAjdJR.png',
+	iceBabies: 'https://i.imgur.com/KE0cDMD.png',
 	digitalRays: 'https://i.imgur.com/Je5Chs0.png',
 	beer: 'https://i.imgur.com/aTs50El.png',
 	islanders: 'https://i.imgur.com/bDpjNeF.png',
@@ -9,7 +9,7 @@ const logoUrls = {
 	toadLickers: 'https://i.imgur.com/TpSQJZN.png',
 	wenches: 'https://i.imgur.com/qVAzfoj.png',
 	nadoes: 'https://i.imgur.com/lLmmaih.png',
-	librarians: 'https://libraries.psu.edu/sites/default/files/default_images/librarian_0_0.gif'
+	librarians: 'https://i.imgur.com/znuRXVw.png'
 };
 
 const teamColors = {
@@ -18,7 +18,7 @@ const teamColors = {
 		secondary: '#ffce00'
 	},
 	digitalRays: {
-		primary: '#00f1ee',
+		primary: '#09dbd9',
 		secondary: '#db00c9'
 	},
 	beer: {
