@@ -1,4 +1,7 @@
 const get2014DraftData = require('../services/draftData/get2014DraftData');
+const get2015DraftData = require('../services/draftData/get2015DraftData');
+const get2016DraftData = require('../services/draftData/get2016DraftData');
+const get2017DraftData = require('../services/draftData/get2017DraftData');
 
 module.exports = {
 	get2014,
