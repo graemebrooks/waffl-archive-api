@@ -9,7 +9,8 @@ const logoUrls = {
 	toadLickers: 'https://i.imgur.com/TpSQJZN.png',
 	wenches: 'https://i.imgur.com/qVAzfoj.png',
 	nadoes: 'https://i.imgur.com/lLmmaih.png',
-	librarians: 'https://i.imgur.com/znuRXVw.png'
+	librarians: 'https://i.imgur.com/znuRXVw.png',
+	flush: 'https://i.imgur.com/s1cIn4l.png'
 };
 
 const teamColors = {
@@ -55,6 +56,10 @@ const teamColors = {
 	},
 	librarians: {
 		primary: '#007efe',
+		secondary: '#ffffff'
+	},
+	flush: {
+		primary: '6ec2d7',
 		secondary: '#ffffff'
 	}
 };
