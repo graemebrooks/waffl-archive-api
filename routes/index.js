@@ -15,6 +15,7 @@ router.get('/index/draftData/2016', draftDataCtrl.get2016);
 router.get('/index/draftData/2017', draftDataCtrl.get2017);
 router.get('/index/draftData/2018', draftDataCtrl.get2018);
 router.get('/index/draftData/2019', draftDataCtrl.get2019);
+router.get('/index/draftData/2020', draftDataCtrl.get2020);
 
 router.get('/index/logos', miscCtrl.logos);
 router.get('/index/colors', miscCtrl.colors);

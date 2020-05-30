@@ -4,7 +4,7 @@ const { promisify } = require('util');
 const { logoUrls } = require('../teamMisc/teamData');
 const { teamColors } = require('../teamMisc/teamData');
 
-async function get2019DraftData() {
+async function get2020DraftData() {
 	const doc = new GoogleSpreadsheet('1UyEK38Llr17ph_qrnuN2CUaKZitpXoKoR59uJqVqgIc');
 	await doc.useServiceAccountAuth({
 		client_email: process.env.CLIENT_EMAIL,
@@ -12,9 +12,9 @@ async function get2019DraftData() {
 	});
 	await doc.loadInfo();
 
-	const sheet = doc.sheetsByIndex[2]; // 2019 draft sheet
+	const sheet = doc.sheetsByIndex[1]; // 2020 draft sheet
 
-	await sheet.loadCells('A1:O45');
+	await sheet.loadCells('A1:O64');
 
 	// Generate draft data
 	const data = {
@@ -100,4 +100,4 @@ async function get2019DraftData() {
 	return data;
 }
 
-module.exports = get2019DraftData;
+module.exports = get2020DraftData;
