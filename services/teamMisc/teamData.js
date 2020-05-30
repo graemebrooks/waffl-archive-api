@@ -59,7 +59,7 @@ const teamColors = {
 		secondary: '#ffffff'
 	},
 	flush: {
-		primary: '6ec2d7',
+		primary: '#6ec2d7',
 		secondary: '#ffffff'
 	}
 };
