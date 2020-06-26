@@ -16,7 +16,7 @@ const logoUrls = {
 const teamColors = {
 	iceBabies: {
 		primary: '#5c2289',
-		secondary: '#ffce00'
+		secondary: '#ffffff'
 	},
 	digitalRays: {
 		primary: '#09dbd9',

@@ -8,6 +8,7 @@ const miscCtrl = require('../controllers/misc');
 
 router.get('/index/statsheet', statsheetCtrl.index);
 router.get('/index/playerRecords', recordbookCtrl.playerRecords);
+router.get('/index/teamRecords', recordbookCtrl.teamRecords);
 
 router.get('/index/draftData/2014', draftDataCtrl.get2014);
 router.get('/index/draftData/2015', draftDataCtrl.get2015);
