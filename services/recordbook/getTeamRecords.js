@@ -41,37 +41,37 @@ async function getTeamRecords() {
 			// Update Alltime QB values
 			switch (team) {
 				case 'Cartels':
-					data.pointsByPosition.cartels[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.cartels[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Beer':
-					data.pointsByPosition.beer[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.beer[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Ice Babies':
-					data.pointsByPosition.iceBabies[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.iceBabies[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Islanders':
-					data.pointsByPosition.islanders[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.islanders[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Wenches':
-					data.pointsByPosition.wenches[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.wenches[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Toad Lickers':
-					data.pointsByPosition.toadLickers[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.toadLickers[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Chili Peppers':
-					data.pointsByPosition.chiliPeppers[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.chiliPeppers[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Digital Rays':
-					data.pointsByPosition.digitalRays[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.digitalRays[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Not The Jets':
-					data.pointsByPosition.notTheJets[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.notTheJets[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Nadoes':
-					data.pointsByPosition.nadoes[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.nadoes[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 				case 'Librarians':
-					data.pointsByPosition.librarians[position[j]] = sheet.getCell(i, teamColumns[j] - 2).value;
+					data.pointsByPosition.librarians[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
 					break;
 			}
 		}
