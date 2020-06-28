@@ -9,23 +9,56 @@ async function getTeamRecords() {
 	});
 	await doc.loadInfo();
 
-	const sheet = doc.sheetsByIndex[2]; // yearly team records sheet
+	const yearlyTeamRecordsSheet = doc.sheetsByIndex[2]; // yearly team records sheet
+	const teamHistorySheet = doc.sheetsByIndex[3]; // team history sheet
 
-	await sheet.loadCells('A1:DN73');
+	await yearlyTeamRecordsSheet.loadCells('A1:DN73');
+	await teamHistorySheet.loadCells('A1:HC11');
 
 	const data = {
-		pointsByPosition: {
-			cartels: {},
-			beer: {},
-			iceBabies: {},
-			islanders: {},
-			wenches: {},
-			toadLickers: {},
-			chiliPeppers: {},
-			digitalRays: {},
-			notTheJets: {},
-			nadoes: {},
-			librarians: {}
+		cartels: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		beer: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		iceBabies: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		islanders: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		wenches: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		toadLickers: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		chiliPeppers: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		digitalRays: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		notTheJets: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		nadoes: {
+			pointsByPosition: {},
+			seasons: []
+		},
+		librarians: {
+			pointsByPosition: {},
+			seasons: []
 		}
 	};
 
@@ -34,48 +67,114 @@ async function getTeamRecords() {
 	// corresponding fantasy positions
 	const position = [ 'qb', 'rb', 'wr', 'te', 'k', 'def' ];
 
+	// populate PBP data
 	for (let i = 1; i <= 11; i++) {
 		for (let j = 0; j < 6; j++) {
-			let team = sheet.getCell(i, teamColumns[j]).value;
+			let team = yearlyTeamRecordsSheet.getCell(i, teamColumns[j]).value;
 
 			// Update Alltime QB values
 			switch (team) {
 				case 'Cartels':
-					data.pointsByPosition.cartels[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.cartels.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Beer':
-					data.pointsByPosition.beer[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.beer.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Ice Babies':
-					data.pointsByPosition.iceBabies[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.iceBabies.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Islanders':
-					data.pointsByPosition.islanders[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.islanders.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Wenches':
-					data.pointsByPosition.wenches[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.wenches.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Toad Lickers':
-					data.pointsByPosition.toadLickers[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.toadLickers.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Chili Peppers':
-					data.pointsByPosition.chiliPeppers[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.chiliPeppers.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Digital Rays':
-					data.pointsByPosition.digitalRays[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.digitalRays.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Not The Jets':
-					data.pointsByPosition.notTheJets[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.notTheJets.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Nadoes':
-					data.pointsByPosition.nadoes[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.nadoes.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 				case 'Librarians':
-					data.pointsByPosition.librarians[position[j]] = sheet.getCell(i, teamColumns[j] - 1).value;
+					data.librarians.pointsByPosition[position[j]] = yearlyTeamRecordsSheet.getCell(
+						i,
+						teamColumns[j] - 1
+					).value;
 					break;
 			}
 		}
 	}
+
+	// Columns that contain seasons for each team in team history sheet
+	const teamHistorySeasonColumns = [ 5, 25, 45, 65, 85, 105, 125, 145, 165, 185, 204 ];
+	// corresponding teams
+	const teams = [
+		'iceBabies',
+		'cartels',
+		'islanders',
+		'toadLickers',
+		'digitalRays',
+		'wenches',
+		'nadoes',
+		'notTheJets',
+		'beer',
+		'chiliPeppers',
+		'librarians'
+	];
+
+	// populate season data
+	for (let i = 1; i < 8; i++) {
+		for (let j = 0; j < 11; j++) {
+			let season = {
+				year: teamHistorySheet.getCell(i, teamHistorySeasonColumns[j]).value,
+				wins: teamHistorySheet.getCell(i, teamHistorySeasonColumns[j] + 1).value,
+				losses: teamHistorySheet.getCell(i, teamHistorySeasonColumns[j] + 2).value,
+				pointsFor: teamHistorySheet.getCell(i, teamHistorySeasonColumns[j] + 3).value,
+				pointsAgainst: teamHistorySheet.getCell(i, teamHistorySeasonColumns[j] + 5).value
+			};
+			data[teams[j]].seasons.push(season);
+		}
+	}
+
 	return data;
 }
 module.exports = getTeamRecords;
