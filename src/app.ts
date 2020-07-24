@@ -1,21 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var fs = require('fs');
-var https = require('https');
+import createError from 'http-errors';
+import express, { Request, Response, NextFunction, Errback } from 'express';
+import * as path from 'path';
+import cookieParser from 'cookie-parser';
+import logger from 'morgan';
+import * as fs from 'fs';
+import * as https from 'https';
 
-var indexRouter = require('./routes/index');
+import indexRouter from './routes/index';
 
+// Environmental variables configuration
 require('dotenv').config();
 
-var app = express();
+let app = express();
 
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
-
+// Middleware
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
@@ -30,20 +28,19 @@ app.use(function(req, res, next) {
 });
 
 // error handler
-app.use(function(err, req, res, next) {
+app.use(function(err: Error, req: Request, res: Response, next: NextFunction) {
 	// set locals, only providing error in development
 	res.locals.message = err.message;
 	res.locals.error = req.app.get('env') === 'development' ? err : {};
 
 	// render the error page
-	res.status(err.status || 500);
 	res.render('error');
 });
 
 const port = process.env.PORT || 8080;
 
 app.listen(port, function() {
- 	console.log(`WAFFL ARCHIVE running on port ${port}`);
+	console.log(`WAFFL ARCHIVE running on port ${port}`);
 });
 
 module.exports = app;
