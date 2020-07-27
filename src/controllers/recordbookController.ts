@@ -1,5 +1,5 @@
 import GetPlayerRecordsService from '../services/recordbook/getPlayerRecordsService';
-const getTeamRecords = require('../services/recordbook/getTeamRecords');
+import GetTeamRecordsService from '../services/recordbook/GetTeamRecordsService';
 
 module.exports = {
 	playerRecords,
@@ -18,7 +18,8 @@ async function playerRecords(req: any, res: any) {
 }
 
 async function teamRecords(req: any, res: any) {
-	let result = await getTeamRecords();
+	let teamRecordsService: GetTeamRecordsService = new GetTeamRecordsService();
+	let result = await teamRecordsService.getTeamRecords(2, 3, 'A1:DN73', 'A1:HC11');
 	try {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.status(200).json(result);
