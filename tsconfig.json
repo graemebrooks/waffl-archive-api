@@ -16,6 +16,6 @@
       "outDir": "./built"
     },
     "include": ["./src/**/*", "jest.config.js"],
-    "exclude": ["node_modules", ".env", "client_secret.json", "server.cert", "server.key"]
+    "exclude": ["node_modules", ".env", "client_secret.json", "server.cert", "server.key", "./built"]
   }
   

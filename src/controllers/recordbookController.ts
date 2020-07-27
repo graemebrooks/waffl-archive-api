@@ -1,4 +1,4 @@
-const getPlayerRecords = require('../services/recordbook/getPlayerRecords');
+import GetPlayerRecordsService from '../services/recordbook/getPlayerRecordsService';
 const getTeamRecords = require('../services/recordbook/getTeamRecords');
 
 module.exports = {
@@ -6,8 +6,9 @@ module.exports = {
 	teamRecords
 };
 
-async function playerRecords(req, res) {
-	result = await getPlayerRecords();
+async function playerRecords(req: any, res: any) {
+	let playerRecordsService: GetPlayerRecordsService = new GetPlayerRecordsService();
+	let result = await playerRecordsService.getPlayerRecords(0, 'A1:AW60');
 	try {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.status(200).json(result);
@@ -16,8 +17,8 @@ async function playerRecords(req, res) {
 	}
 }
 
-async function teamRecords(req, res) {
-	result = await getTeamRecords();
+async function teamRecords(req: any, res: any) {
+	let result = await getTeamRecords();
 	try {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.status(200).json(result);

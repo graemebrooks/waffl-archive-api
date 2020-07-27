@@ -2,8 +2,8 @@ var express = require('express');
 var router = express.Router();
 
 const statsheetCtrl = require('../controllers/statsheet');
-const recordbookCtrl = require('../controllers/recordbook');
-const draftDataCtrl = require('../controllers/draftData.js');
+const recordbookCtrl = require('../controllers/recordbookController');
+const draftDataCtrl = require('../controllers/draftDataController.js');
 const miscCtrl = require('../controllers/misc');
 
 router.get('/index/statsheet', statsheetCtrl.index);
