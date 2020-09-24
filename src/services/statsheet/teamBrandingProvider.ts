@@ -52,8 +52,8 @@ export function getTeamBranding(teamName: string): teamBranding {
 			return {
 				logoUrl: 'https://i.imgur.com/TpSQJZN.png',
 				colors: {
-					primary: '#00205b',
-					secondary: '#fa6300'
+					primary: '#206632',
+					secondary: '#e53841'
 				}
 			};
 		case 'Chili Peppers':
