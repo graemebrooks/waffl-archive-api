@@ -1,5 +1,5 @@
 import GetPlayerRecordsService from '../services/recordbook/getPlayerRecordsService';
-import GetTeamRecordsService from '../services/recordbook/GetTeamRecordsService';
+import GetTeamRecordsService from '../services/recordbook/getTeamRecordsService';
 
 module.exports = {
 	playerRecords,
