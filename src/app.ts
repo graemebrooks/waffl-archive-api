@@ -5,11 +5,13 @@ import cookieParser from 'cookie-parser';
 import logger from 'morgan';
 import * as fs from 'fs';
 import * as https from 'https';
+import * as dotenv from 'dotenv'
 
 import indexRouter from './routes/index';
 
 // Environmental variables configuration
-require('dotenv').config();
+// require('dotenv').config();
+dotenv.config();
 
 let app = express();
 
