@@ -1,7 +1,8 @@
 import FleaflickerService from '../services/fleaflicker/fleaFlickerService';
 
 module.exports = {
-	getCurrentWafflStandings
+	getCurrentWafflStandings,
+	getScoringLeaders
 };
 
 async function getCurrentWafflStandings(req: any, res: any) {
@@ -10,6 +11,17 @@ async function getCurrentWafflStandings(req: any, res: any) {
 	try {
 		res.setHeader('Access-Control-Allow-Origin', '*');
 		res.status(200).json(standings);
+	} catch (err) {
+		res.status(400).json(err);
+	}
+}
+
+async function getScoringLeaders(req: any, res: any) {
+	let fleaFlickerService: FleaflickerService = new FleaflickerService();
+	let ScoringLeaders = await fleaFlickerService.getScoringLeaders();
+	try {
+		res.setHeader('Access-Control-Allow-Origin', '*');
+		res.status(200).json(ScoringLeaders);
 	} catch (err) {
 		res.status(400).json(err);
 	}

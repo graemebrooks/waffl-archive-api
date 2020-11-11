@@ -20,6 +20,7 @@ router.get('/index/draftData/2019', draftDataCtrl.get2019Draft);
 router.get('/index/draftData/2020', draftDataCtrl.get2020Draft);
 
 router.get('/index/fleaflicker/standings', fleaflickerCtrl.getCurrentWafflStandings);
+router.get('/index/fleaflicker/scoringLeaders', fleaflickerCtrl.getScoringLeaders);
 
 router.get('/index/logos', miscCtrl.logos);
 router.get('/index/colors', miscCtrl.colors);
